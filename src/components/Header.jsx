@@ -9,7 +9,7 @@ export default function Header() {
 
   return (
     <nav>
-      <Link className="link" to="/" style={linkStyle}>
+      <Link className="link" to="/PolyRoll/" style={linkStyle}>
         <motion.h1
           className="menu"
           initial={{ opacity: 0 }}
