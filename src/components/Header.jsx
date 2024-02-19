@@ -20,12 +20,7 @@ export default function Header() {
         </motion.h1>
       </Link>
       <a href="https://github.com/dondewaay/PolyRoll">
-        <motion.img
-          src="/img/githublogo.png"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
-        />
+        <img src="./github-mark-white.png" alt="GitHub Logo" />
       </a>
     </nav>
   );
