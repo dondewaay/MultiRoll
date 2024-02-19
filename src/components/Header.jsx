@@ -19,9 +19,9 @@ export default function Header() {
           PolyRoll Beta
         </motion.h1>
       </Link>
-      <a href="https://github.com/dondewaay/DiceProject">
+      <a href="https://github.com/dondewaay/PolyRoll">
         <motion.img
-          src="../assets/img/github-mark-white.png"
+          src="/img/githublogo.png"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
