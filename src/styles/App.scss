@@ -1,0 +1,108 @@
+/* VARIABLES */
+$UNSELCOLOR: hsla(0, 0%, 100%, 0.5);
+
+/* HTML RESET */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  background-color: black;
+}
+
+/* GENERAL STYLES */
+
+nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  z-index: 999;
+  width: 100%;
+  height: 25px;
+  padding: 3rem 4rem 3rem 4rem;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+  align-items: flex-end;
+  font-size: 1rem;
+  h1 {
+    font-family: "Neue";
+    white-space: nowrap;
+    color: $UNSELCOLOR;
+    pointer-events: auto;
+    margin-right: auto;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      background: linear-gradient(45deg, rgb(255, 170, 0), red);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transform: scale(1.07);
+    }
+  }
+  .link {
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+  }
+  img {
+    max-width: 25px;
+    height: auto;
+    margin-left: auto;
+    pointer-events: auto;
+    transition: 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.foot {
+  font-family: "Neue";
+  font-size: 1.2rem;
+  padding: 0rem 5rem 2rem 5rem;
+  justify-content: space-between;
+  align-items: flex-end;
+  display: flex;
+  height: 210px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  border-top: 2px solid white;
+  .pop {
+    transition: 0.1s ease-in-out;
+    &:hover {
+      transform: translatex(-10px);
+    }
+  }
+  p a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    display: block;
+    text-align: center;
+    padding-top: 3rem;
+    h1 {
+      color: white;
+    }
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@font-face {
+  font-family: Pexel;
+  src: url(../assets/fonts/PexelGrotesk/PexelGrotesk-Regular.otf);
+}
+
+@font-face {
+  font-family: Neue;
+  src: url(src/assets/fonts/Neue/PPNeueMachina-InktrapRegular.otf);
+}
