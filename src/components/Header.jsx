@@ -20,7 +20,7 @@ export default function Header() {
         </motion.h1>
       </Link>
       <a href="https://github.com/dondewaay/PolyRoll">
-        <img src="./github-mark-white.png" alt="GitHub Logo" />
+        <img src="/img/github-mark-white.png" alt="GitHub Logo" />
       </a>
     </nav>
   );
