@@ -21,7 +21,7 @@ export default function Header() {
       </Link>
       <a href="https://github.com/dondewaay/DiceProject">
         <motion.img
-          src="src/assets/img/github-mark-white.png"
+          src="../assets/img/github-mark-white.png"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
