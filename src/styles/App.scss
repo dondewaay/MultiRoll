@@ -33,28 +33,12 @@ nav {
     color: $UNSELCOLOR;
     pointer-events: auto;
     margin-right: auto;
-    transition: 0.3s ease-in-out;
-    &:hover {
-      background: linear-gradient(45deg, rgb(255, 170, 0), red);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      transform: scale(1.07);
-    }
-  }
-  .link {
-    text-decoration: none;
-    transition: 0.2s ease-in-out;
   }
   img {
     max-width: 25px;
     height: auto;
     margin-left: auto;
     pointer-events: auto;
-    transition: 0.2s ease-in-out;
-    &:hover {
-      transform: scale(1.2);
-    }
   }
 }
 

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import ghlogo from "/img/ghlogo.png";
 
 export default function Header() {
   const linkStyle = {
@@ -12,15 +13,28 @@ export default function Header() {
       <Link className="link" to="/PolyRoll/" style={linkStyle}>
         <motion.h1
           className="menu"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+          initial={{ y: -50 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.3 }}
+          whileHover={{
+            scale: 1.07,
+          }}
         >
           PolyRoll Beta
         </motion.h1>
       </Link>
       <a href="https://github.com/dondewaay/PolyRoll">
-        <img src="/img/github-mark-white.png" alt="GitHub Logo" />
+        <motion.img
+          className="menu"
+          initial={{ y: -50 }}
+          animate={{ y: 0 }}
+          transition={{ delay: 0.2, duration: 0.3 }}
+          whileHover={{
+            scale: 1.03,
+          }}
+          src={ghlogo}
+          alt="GitHub Logo"
+        />
       </a>
     </nav>
   );
