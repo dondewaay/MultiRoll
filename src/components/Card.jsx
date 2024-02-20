@@ -6,7 +6,7 @@ const Card = ({ name, config }) => {
       className="card"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.3 }}
     >
       <h2>{name}</h2>
       <button className="btn">Roll</button>
