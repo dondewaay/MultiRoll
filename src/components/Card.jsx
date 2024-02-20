@@ -6,34 +6,43 @@ const Card = ({ key, name, config }) => {
 
   const calculateTotalRoll = () => {
     let total = 0;
-    for (i = 0; i < config.d2; i++) {
+    for (let i = 0; i < config.d2; i++) {
       total += Math.floor(Math.random() * 2 + 1);
+      console.log("d2");
     }
-    for (i = 0; i < config.d3; i++) {
+    for (let i = 0; i < config.d3; i++) {
       total += Math.floor(Math.random() * 3 + 1);
+      console.log("d3");
     }
-    for (i = 0; i < config.d4; i++) {
+    for (let i = 0; i < config.d4; i++) {
       total += Math.floor(Math.random() * 4 + 1);
+      console.log("d4");
     }
-    for (i = 0; i < config.d6; i++) {
+    for (let i = 0; i < config.d6; i++) {
       total += Math.floor(Math.random() * 6 + 1);
+      console.log("d6");
     }
-    for (i = 0; i < config.d8; i++) {
+    for (let i = 0; i < config.d8; i++) {
       total += Math.floor(Math.random() * 8 + 1);
+      console.log("d8");
     }
-    for (i = 0; i < config.d10; i++) {
+    for (let i = 0; i < config.d10; i++) {
       total += Math.floor(Math.random() * 10 + 1);
+      console.log("d10");
     }
-    for (i = 0; i < config.d12; i++) {
+    for (let i = 0; i < config.d12; i++) {
       total += Math.floor(Math.random() * 12 + 1);
+      console.log("d12");
     }
-    for (i = 0; i < config.d20; i++) {
+    for (let i = 0; i < config.d20; i++) {
       total += Math.floor(Math.random() * 20 + 1);
+      console.log("d20");
     }
-    for (i = 0; i < config.d100; i++) {
+    for (let i = 0; i < config.d100; i++) {
       total += Math.floor(Math.random() * 100 + 1);
+      console.log("d100");
     }
-    setTotalRoll(10);
+    setTotalRoll(total);
   };
 
   return (
