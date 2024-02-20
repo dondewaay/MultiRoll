@@ -30,7 +30,9 @@ export default function Header() {
           animate={{ y: 0 }}
           transition={{ delay: 0.2, duration: 0.3 }}
           whileHover={{
-            scale: 1.03,
+            transition: 0.3,
+            delay: 0,
+            scale: 1.25,
           }}
           src={ghlogo}
           alt="GitHub Logo"
