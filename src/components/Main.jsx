@@ -24,7 +24,7 @@ export default function Main() {
         transition={{ type: "spring", duration: 1 }}
       >
         <h1>
-          A New Way <br />
+          A Better Way <br />
           to <span>Roll</span>
         </h1>
         <Link to="/PolyRoll/roll">
