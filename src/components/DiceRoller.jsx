@@ -14,6 +14,7 @@ const DiceRoller = () => {
     d12: 0,
     d20: 0,
     d100: 0,
+    mod: 0,
   });
 
   const handlePresetNameChange = (event) => {
@@ -25,12 +26,17 @@ const DiceRoller = () => {
     setPresetConfig({ ...presetConfig, [name]: parseInt(value) });
   };
 
+  const deletePreset = (presetName) => {
+    setPresets(presets.filter((preset) => preset.name !== presetName));
+  };
+
   const addPreset = () => {
     const newPreset = { name: presetName, config: presetConfig };
     setPresets([...presets, newPreset]);
     setPresetName("");
     setPresetConfig({
       d2: 0,
+      d3: 0,
       d4: 0,
       d6: 0,
       d8: 0,
@@ -132,12 +138,25 @@ const DiceRoller = () => {
           value={presetConfig.d100}
           onChange={handlePresetConfigChange}
         />
+        <label htmlFor="mod">Modifier: </label>
+        <input
+          type="number"
+          id="mod"
+          name="mod"
+          value={presetConfig.mod}
+          onChange={handlePresetConfigChange}
+        />
         <button onClick={addPreset}>Add</button>
       </div>
       <div>
         <div className="preset-container">
           {presets.map((preset, index) => (
-            <Card key={index} name={preset.name} config={preset.config} />
+            <Card
+              key={index}
+              name={preset.name}
+              config={preset.config}
+              onDelete={deletePreset}
+            />
           ))}
         </div>
       </div>

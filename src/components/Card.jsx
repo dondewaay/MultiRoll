@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const Card = ({ key, name, config }) => {
-  const [totalRoll, setTotalRoll] = useState(0);
+const Card = ({ key, name, config, onDelete }) => {
+  const [totalRoll, setTotalRoll] = useState();
 
   const calculateTotalRoll = () => {
     let total = 0;
@@ -42,6 +42,7 @@ const Card = ({ key, name, config }) => {
       total += Math.floor(Math.random() * 100 + 1);
       console.log("d100");
     }
+    total += config.mod;
     setTotalRoll(total);
   };
 
@@ -54,9 +55,12 @@ const Card = ({ key, name, config }) => {
     >
       <h2>{name}</h2>
       <h2>{key}</h2>
-      <p>Total Roll: {totalRoll}</p>
+      <p>Result: {totalRoll}</p>
       <button className="btn" onClick={calculateTotalRoll}>
         Roll
+      </button>
+      <button className="del" onClick={() => onDelete(name)}>
+        X
       </button>
     </motion.div>
   );
