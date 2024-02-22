@@ -44,6 +44,7 @@ const DiceRoller = () => {
       d12: 0,
       d20: 0,
       d100: 0,
+      mod: 0,
     });
   };
 
@@ -152,15 +153,17 @@ const DiceRoller = () => {
                 onChange={handlePresetConfigChange}
               />
             </div>
-            <div className="entry">
-              <label htmlFor="mod">Modifier: </label>
-              <input
-                type="number"
-                id="mod"
-                name="mod"
-                value={presetConfig.mod}
-                onChange={handlePresetConfigChange}
-              />
+            <div className="row">
+              <div className="entry">
+                <label htmlFor="mod">Modifier: </label>
+                <input
+                  type="number"
+                  id="mod"
+                  name="mod"
+                  value={presetConfig.mod}
+                  onChange={handlePresetConfigChange}
+                />
+              </div>
             </div>
           </div>
         </div>
