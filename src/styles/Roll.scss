@@ -79,14 +79,22 @@ $UNSELCOLOR: hsla(0, 0%, 100%, 0.5);
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      font-family: "Neue";
       .row {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
       }
       .entry {
+        padding-top: 5px;
         font-size: 20px;
         margin: 1rem;
+        label {
+          padding-top: 5px;
+        }
         input {
+          padding-top: 5px;
+          font-family: "Neue";
           color: white;
           background-color: black;
           border: 1px solid white;
@@ -94,11 +102,14 @@ $UNSELCOLOR: hsla(0, 0%, 100%, 0.5);
           font-size: 20px;
           padding: 4px;
           width: 75px;
+          height: 40px;
         }
       }
       .name {
+        padding-top: 5px;
+        font-family: "Neue";
         width: 200px;
-        height: 40px;
+        height: 45px;
         font-size: 26px;
         color: white;
         background-color: black;
@@ -109,6 +120,7 @@ $UNSELCOLOR: hsla(0, 0%, 100%, 0.5);
       }
     }
     .btn {
+      padding-top: 5px;
       position: absolute;
       bottom: 20px;
       right: 20px;
