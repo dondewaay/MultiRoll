@@ -64,6 +64,8 @@ $UNSELCOLOR: hsla(0, 0%, 100%, 0.5);
     padding: 20px;
     position: relative;
     display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 1px;
     h1 {
       position: absolute;
@@ -73,10 +75,16 @@ $UNSELCOLOR: hsla(0, 0%, 100%, 0.5);
     }
     .input-box {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      .row {
+        display: flex;
+        flex-direction: row;
+      }
       .entry {
         font-size: 20px;
+        margin: 1rem;
         input {
           color: white;
           background-color: black;
@@ -85,12 +93,18 @@ $UNSELCOLOR: hsla(0, 0%, 100%, 0.5);
           font-size: 20px;
           padding: 4px;
           width: 75px;
-          .name {
-            width: 150px;
-            position: absolute;
-            top: 20px;
-          }
         }
+      }
+      .name {
+        width: 200px;
+        height: 40px;
+        font-size: 26px;
+        color: white;
+        background-color: black;
+        border: 1px solid white;
+        border-radius: 3px;
+        position: absolute;
+        left: 20px;
       }
     }
     .btn {
