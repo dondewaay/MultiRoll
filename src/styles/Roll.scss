@@ -17,12 +17,6 @@ $UNSELCOLOR: hsla(0, 0%, 100%, 0.5);
   width: 100vw;
 }
 
-.card {
-  width: 200px;
-  height: 150px;
-  margin: 1rem;
-}
-
 .hero {
   height: 80vh;
   display: flex;
@@ -36,6 +30,7 @@ $UNSELCOLOR: hsla(0, 0%, 100%, 0.5);
     box-sizing: border-box;
   }
   h1 {
+    text-shadow: 0px 0px 10px 10px white;
     position: relative;
     left: 12%;
     top: 35%;
@@ -62,57 +57,115 @@ $UNSELCOLOR: hsla(0, 0%, 100%, 0.5);
   width: 100%;
   .new {
     border: 2px solid white;
-  }
-  .card {
-    cursor: pointer;
-    padding: 2rem;
-    margin: 0;
-    text-align: center;
-    font-family: "Neue";
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    font-size: 2rem;
-    color: white;
-    height: 200px;
-    width: 100%;
-    box-sizing: border-box;
-    border: 2px solid white;
-    border-radius: 2px;
-    background-color: black;
-    box-shadow: black 0px 10px 20px;
+    height: 250px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
     position: relative;
-    .btn {
-      border: 2px solid white;
-      font-size: 1.8rem;
-      margin-top: 1.5rem;
-      color: white;
-      height: 75px;
-      width: 110px;
-      border-radius: 1px;
-      background: black;
-      transition: 0.2s ease-in-out;
-      cursor: pointer;
-      &:hover {
-        transform: translatey(-5px);
-        border: 5px solid white;
-      }
-    }
-    .del {
+    display: flex;
+    label {
       position: absolute;
-      top: 1rem;
-      right: 1rem;
-      width: 50px;
-      height: 50px;
+      top: 0;
+      left: 0;
+      margin: 20px;
+      font-size: 20px;
+    }
+    input {
       color: white;
       background-color: black;
+      border: 1px solid white;
+      border-radius: 3px;
+      font-size: 20px;
+      padding: 4px;
+      width: 75px;
+      &.name {
+        width: 150px;
+        position: absolute;
+        top: 20px;
+      }
+    }
+    .btn {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+  .grid {
+    margin-left: 150px;
+    margin-right: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .card {
+      margin: 2rem;
+      text-align: center;
+      font-family: "Neue";
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      font-size: 2rem;
+      color: white;
+      height: 250px;
+      width: 400px;
+      box-sizing: border-box;
       border: 2px solid white;
-      font-size: 36px;
-      cursor: pointer;
-      transition: 0.2s ease-in-out;
-      &:hover {
-        box-shadow: 0px 0px 15px 3px white;
-        border: 5px solid white;
+      border-radius: 2px;
+      background-color: black;
+      box-shadow: black 0px 10px 20px;
+      position: relative;
+      h2 {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 0;
+        margin: 0;
+      }
+      .result {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        padding: 0;
+        margin: 0;
+      }
+      .btn {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        border: 2px solid white;
+        font-size: 1.8rem;
+        margin-top: 1.5rem;
+        color: white;
+        height: 75px;
+        width: 110px;
+        border-radius: 1px;
+        background: black;
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+        &:hover {
+          transform: translatey(-5px);
+          border: 5px solid white;
+          box-shadow: 0px 0px 15px 3px white;
+        }
+      }
+      .del {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        color: white;
+        background-color: black;
+        border: 3px solid white;
+        border-radius: 1px;
+        font-size: 36px;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          box-shadow: 0px 0px 15px 3px red;
+          border: 3px solid red;
+          color: red;
+        }
       }
     }
   }
