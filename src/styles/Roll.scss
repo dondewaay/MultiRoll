@@ -64,25 +64,33 @@ $UNSELCOLOR: hsla(0, 0%, 100%, 0.5);
     padding: 20px;
     position: relative;
     display: flex;
-    label {
+    border-radius: 1px;
+    h1 {
       position: absolute;
       top: 0;
       left: 0;
       margin: 20px;
-      font-size: 20px;
     }
-    input {
-      color: white;
-      background-color: black;
-      border: 1px solid white;
-      border-radius: 3px;
-      font-size: 20px;
-      padding: 4px;
-      width: 75px;
-      &.name {
-        width: 150px;
-        position: absolute;
-        top: 20px;
+    .input-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .entry {
+        font-size: 20px;
+        input {
+          color: white;
+          background-color: black;
+          border: 1px solid white;
+          border-radius: 3px;
+          font-size: 20px;
+          padding: 4px;
+          width: 75px;
+          .name {
+            width: 150px;
+            position: absolute;
+            top: 20px;
+          }
+        }
       }
     }
     .btn {
