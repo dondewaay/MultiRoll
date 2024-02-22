@@ -15,7 +15,7 @@ export default function Header() {
           className="menu"
           initial={{ y: -50 }}
           animate={{ y: 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ type: "spring", duration: 0.3 }}
           whileHover={{
             scale: 1.07,
           }}

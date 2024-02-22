@@ -55,7 +55,7 @@ const DiceRoller = () => {
           <input
             className="name"
             type="text"
-            placeholder="Preset Name"
+            placeholder=" Preset Name"
             value={presetName}
             onChange={handlePresetNameChange}
           />
