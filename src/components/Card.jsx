@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Card = ({ key, name, config, onDelete }) => {
-  const [totalRoll, setTotalRoll] = useState(0);
+  const [totalRoll, setTotalRoll] = useState();
 
   const calculateTotalRoll = () => {
     let total = 0;
