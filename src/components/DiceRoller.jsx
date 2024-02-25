@@ -171,17 +171,15 @@ const DiceRoller = () => {
           Add
         </button>
       </div>
-      <div>
-        <div className="grid">
-          {presets.map((preset, index) => (
-            <Card
-              key={index}
-              name={preset.name}
-              config={preset.config}
-              onDelete={deletePreset}
-            />
-          ))}
-        </div>
+      <div className="grid">
+        {presets.map((preset, index) => (
+          <Card
+            key={index}
+            name={preset.name}
+            config={preset.config}
+            onDelete={deletePreset}
+          />
+        ))}
       </div>
     </div>
   );
