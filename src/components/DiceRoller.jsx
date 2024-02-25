@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "./Card";
 
 const DiceRoller = () => {
-  const [presets, setPresets] = useState([]);
+  const [presets, setPresets] = useState(() => {
+    const storedPresets = localStorage.getItem("presets");
+    return storedPresets ? JSON.parse(storedPresets) : [];
+  });
   const [presetName, setPresetName] = useState("");
   const [presetConfig, setPresetConfig] = useState({
     d2: 0,
@@ -16,7 +19,18 @@ const DiceRoller = () => {
     d100: 0,
     mod: 0,
   });
-  const [lastUsedId, setLastUsedId] = useState(0);
+  const [lastUsedId, setLastUsedId] = useState(() => {
+    const storedLastUsedId = localStorage.getItem("lastUsedId");
+    return storedLastUsedId ? parseInt(storedLastUsedId) : 0;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("presets", JSON.stringify(presets));
+  }, [presets]);
+
+  useEffect(() => {
+    localStorage.setItem("lastUsedId", lastUsedId.toString());
+  }, [lastUsedId]);
 
   const handlePresetNameChange = (event) => {
     setPresetName(event.target.value);
