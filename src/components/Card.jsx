@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Card = ({ key, name, config, onDelete }) => {
+const Card = ({ id, name, config, onDelete }) => {
   const [totalRoll, setTotalRoll] = useState();
 
   const calculateTotalRoll = () => {
@@ -60,6 +60,7 @@ const Card = ({ key, name, config, onDelete }) => {
         <motion.span
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -25 }}
           transition={{ duration: 0.2 }}
         >
           {totalRoll}
@@ -68,7 +69,7 @@ const Card = ({ key, name, config, onDelete }) => {
       <button className="btn" onClick={calculateTotalRoll}>
         Roll
       </button>
-      <button className="del" onClick={() => onDelete(name)}>
+      <button className="del" onClick={() => onDelete(id)}>
         X
       </button>
     </motion.div>

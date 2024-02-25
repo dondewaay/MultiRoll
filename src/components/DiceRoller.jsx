@@ -1,5 +1,5 @@
+import React, { useState } from "react";
 import Card from "./Card";
-import { useState } from "react";
 
 const DiceRoller = () => {
   const [presets, setPresets] = useState([]);
@@ -16,6 +16,7 @@ const DiceRoller = () => {
     d100: 0,
     mod: 0,
   });
+  const [lastUsedId, setLastUsedId] = useState(0);
 
   const handlePresetNameChange = (event) => {
     setPresetName(event.target.value);
@@ -26,12 +27,17 @@ const DiceRoller = () => {
     setPresetConfig({ ...presetConfig, [name]: parseInt(value) });
   };
 
-  const deletePreset = (presetName) => {
-    setPresets(presets.filter((preset) => preset.name !== presetName));
+  const deletePreset = (id) => {
+    setPresets(presets.filter((preset) => preset.id !== id));
   };
 
   const addPreset = () => {
-    const newPreset = { name: presetName, config: presetConfig };
+    const newId = lastUsedId + 1;
+    const newPreset = {
+      id: newId,
+      name: presetName,
+      config: presetConfig,
+    };
     setPresets([...presets, newPreset]);
     setPresetName("");
     setPresetConfig({
@@ -46,6 +52,7 @@ const DiceRoller = () => {
       d100: 0,
       mod: 0,
     });
+    setLastUsedId(newId);
   };
 
   return (
@@ -172,9 +179,10 @@ const DiceRoller = () => {
         </button>
       </div>
       <div className="grid">
-        {presets.map((preset, index) => (
+        {presets.map((preset) => (
           <Card
-            key={index}
+            key={preset.id}
+            id={preset.id}
             name={preset.name}
             config={preset.config}
             onDelete={deletePreset}
