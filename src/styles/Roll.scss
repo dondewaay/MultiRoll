@@ -127,13 +127,12 @@ $UNSELCOLOR: hsla(0, 0%, 100%, 0.5);
     }
   }
   .grid {
-    margin-left: 150px;
-    margin-right: 150px;
+    margin: 0 100px 0 100px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     .card {
-      margin: 2rem;
+      margin: 35px 50px 35px 50px;
       text-align: center;
       font-family: "Neue";
       display: flex;
