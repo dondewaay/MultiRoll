@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
+import { motion, AnimatePresence } from "framer-motion";
 
 const DiceRoller = () => {
   const [presets, setPresets] = useState(() => {
@@ -192,17 +193,19 @@ const DiceRoller = () => {
           Add
         </button>
       </div>
-      <div className="grid">
-        {presets.map((preset) => (
-          <Card
-            key={preset.id}
-            id={preset.id}
-            name={preset.name}
-            config={preset.config}
-            onDelete={deletePreset}
-          />
-        ))}
-      </div>
+      <AnimatePresence>
+        <motion.div className="grid" layout>
+          {presets.map((preset) => (
+            <Card
+              key={preset.id}
+              id={preset.id}
+              name={preset.name}
+              config={preset.config}
+              onDelete={deletePreset}
+            />
+          ))}
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };
