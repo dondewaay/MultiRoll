@@ -206,19 +206,17 @@ const DiceRoller = () => {
           Add
         </button>
       </div>
-      <AnimatePresence>
-        <motion.div className="grid" layout>
-          {presets.map((preset) => (
-            <Card
-              key={preset.id}
-              id={preset.id}
-              name={preset.name}
-              config={preset.config}
-              onDelete={deletePreset}
-            />
-          ))}
-        </motion.div>
-      </AnimatePresence>
+      <div className="grid" layout>
+        {presets.map((preset) => (
+          <Card
+            key={preset.id}
+            id={preset.id}
+            name={preset.name}
+            config={preset.config}
+            onDelete={deletePreset}
+          />
+        ))}
+      </div>
     </div>
   );
 };
