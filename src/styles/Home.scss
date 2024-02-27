@@ -92,7 +92,13 @@
   }
   .billboard {
     h1 {
-      font-size: 4rem;
+      font-size: 4.5rem;
     }
+  }
+}
+
+@media (max-width: 600px) {
+  .threed {
+    display: none;
   }
 }
