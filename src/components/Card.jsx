@@ -56,7 +56,7 @@ const Card = ({ id, name, config, onDelete }) => {
     >
       <h2>{name}</h2>
       <p className="result">
-        Result:
+        Result:&nbsp;
         <motion.span
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}

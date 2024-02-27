@@ -72,139 +72,141 @@ const DiceRoller = () => {
 
   return (
     <div className="roller">
-      <div className="hide">
-        <motion.div
-          className="bg-text"
-          animate={{ opacity: 1, x: "100%" }}
-          transition={{ duration: 1000, repeat: Infinity, ease: "linear" }}
-          while={{ x: 0 }}
-        >
-          PolyRoll<span>PolyRoll</span>PolyRoll<span>PolyRoll</span>PolyRoll
-          <span>PolyRoll</span>PolyRoll<span>PolyRoll</span>PolyRoll
-          <span>PolyRoll</span>PolyRoll<span>PolyRoll</span>PolyRoll
-          <span>PolyRoll</span>PolyRoll
-        </motion.div>
-      </div>
-      <div className="new">
-        <h1>Add a Preset:</h1>
-        <div className="input-box">
-          <input
-            className="name"
-            type="text"
-            placeholder=" Preset Name"
-            value={presetName}
-            onChange={handlePresetNameChange}
-          />
-          <div className="row">
-            <div className="entry">
-              <label htmlFor="d2">d2: </label>
-              <input
-                type="number"
-                id="d2"
-                name="d2"
-                value={presetConfig.d2}
-                onChange={handlePresetConfigChange}
-              />
-            </div>
-            <div className="entry">
-              <label htmlFor="d3">d3: </label>
-              <input
-                type="number"
-                id="d3"
-                name="d3"
-                value={presetConfig.d3}
-                onChange={handlePresetConfigChange}
-              />
-            </div>
-            <div className="entry">
-              <label htmlFor="d4">d4: </label>
-              <input
-                type="number"
-                id="d4"
-                name="d4"
-                value={presetConfig.d4}
-                onChange={handlePresetConfigChange}
-              />
-            </div>
-            <div className="entry">
-              <label htmlFor="d6">d6: </label>
-              <input
-                type="number"
-                id="d6"
-                name="d6"
-                value={presetConfig.d6}
-                onChange={handlePresetConfigChange}
-              />
-            </div>
-            <div className="entry">
-              <label htmlFor="d8">d8: </label>
-              <input
-                type="number"
-                id="d8"
-                name="d8"
-                value={presetConfig.d8}
-                onChange={handlePresetConfigChange}
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div className="entry">
-              <label htmlFor="d10">d10: </label>
-              <input
-                type="number"
-                id="d10"
-                name="d10"
-                value={presetConfig.d10}
-                onChange={handlePresetConfigChange}
-              />
-            </div>
-            <div className="entry">
-              <label htmlFor="d12">d12: </label>
-              <input
-                type="number"
-                id="d12"
-                name="d12"
-                value={presetConfig.d12}
-                onChange={handlePresetConfigChange}
-              />
-            </div>
-            <div className="entry">
-              <label htmlFor="d20">d20: </label>
-              <input
-                type="number"
-                id="d20"
-                name="d20"
-                value={presetConfig.d20}
-                onChange={handlePresetConfigChange}
-              />
-            </div>
-            <div className="entry">
-              <label htmlFor="d100">d100: </label>
-              <input
-                type="number"
-                id="d100"
-                name="d100"
-                value={presetConfig.d100}
-                onChange={handlePresetConfigChange}
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div className="entry">
-              <label htmlFor="mod">Modifier: </label>
-              <input
-                type="number"
-                id="mod"
-                name="mod"
-                value={presetConfig.mod}
-                onChange={handlePresetConfigChange}
-              />
-            </div>
-          </div>
+      <div className="top">
+        <div className="hide">
+          <motion.div
+            className="bg-text"
+            animate={{ opacity: 1, x: "100%" }}
+            transition={{ duration: 1000, repeat: Infinity, ease: "linear" }}
+            while={{ x: 0 }}
+          >
+            PolyRoll<span>PolyRoll</span>PolyRoll<span>PolyRoll</span>PolyRoll
+            <span>PolyRoll</span>PolyRoll<span>PolyRoll</span>PolyRoll
+            <span>PolyRoll</span>PolyRoll<span>PolyRoll</span>PolyRoll
+            <span>PolyRoll</span>PolyRoll
+          </motion.div>
         </div>
-        <button onClick={addPreset} className="btn">
-          Add
-        </button>
+        <div className="new">
+          <h1>Add a Preset:</h1>
+          <div className="input-box">
+            <input
+              className="name"
+              type="text"
+              placeholder=" Preset Name"
+              value={presetName}
+              onChange={handlePresetNameChange}
+            />
+            <div className="row">
+              <div className="entry">
+                <label htmlFor="d2">d2: </label>
+                <input
+                  type="number"
+                  id="d2"
+                  name="d2"
+                  value={presetConfig.d2}
+                  onChange={handlePresetConfigChange}
+                />
+              </div>
+              <div className="entry">
+                <label htmlFor="d3">d3: </label>
+                <input
+                  type="number"
+                  id="d3"
+                  name="d3"
+                  value={presetConfig.d3}
+                  onChange={handlePresetConfigChange}
+                />
+              </div>
+              <div className="entry">
+                <label htmlFor="d4">d4: </label>
+                <input
+                  type="number"
+                  id="d4"
+                  name="d4"
+                  value={presetConfig.d4}
+                  onChange={handlePresetConfigChange}
+                />
+              </div>
+              <div className="entry">
+                <label htmlFor="d6">d6: </label>
+                <input
+                  type="number"
+                  id="d6"
+                  name="d6"
+                  value={presetConfig.d6}
+                  onChange={handlePresetConfigChange}
+                />
+              </div>
+              <div className="entry">
+                <label htmlFor="d8">d8: </label>
+                <input
+                  type="number"
+                  id="d8"
+                  name="d8"
+                  value={presetConfig.d8}
+                  onChange={handlePresetConfigChange}
+                />
+              </div>
+            </div>
+            <div className="row">
+              <div className="entry">
+                <label htmlFor="d10">d10: </label>
+                <input
+                  type="number"
+                  id="d10"
+                  name="d10"
+                  value={presetConfig.d10}
+                  onChange={handlePresetConfigChange}
+                />
+              </div>
+              <div className="entry">
+                <label htmlFor="d12">d12: </label>
+                <input
+                  type="number"
+                  id="d12"
+                  name="d12"
+                  value={presetConfig.d12}
+                  onChange={handlePresetConfigChange}
+                />
+              </div>
+              <div className="entry">
+                <label htmlFor="d20">d20: </label>
+                <input
+                  type="number"
+                  id="d20"
+                  name="d20"
+                  value={presetConfig.d20}
+                  onChange={handlePresetConfigChange}
+                />
+              </div>
+              <div className="entry">
+                <label htmlFor="d100">d100: </label>
+                <input
+                  type="number"
+                  id="d100"
+                  name="d100"
+                  value={presetConfig.d100}
+                  onChange={handlePresetConfigChange}
+                />
+              </div>
+            </div>
+            <div className="row">
+              <div className="entry">
+                <label htmlFor="mod">Modifier: </label>
+                <input
+                  type="number"
+                  id="mod"
+                  name="mod"
+                  value={presetConfig.mod}
+                  onChange={handlePresetConfigChange}
+                />
+              </div>
+            </div>
+          </div>
+          <button onClick={addPreset} className="btn">
+            Add
+          </button>
+        </div>
       </div>
       <div className="grid" layout>
         {presets.map((preset) => (
