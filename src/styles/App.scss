@@ -30,7 +30,7 @@ nav {
   h1 {
     font-family: "Neue";
     white-space: nowrap;
-    color: $UNSELCOLOR;
+    color: white;
     pointer-events: auto;
     margin-right: auto;
   }
@@ -84,4 +84,29 @@ nav {
 @font-face {
   font-family: Neue;
   src: url("/fonts/Neue/PPNeueMachina-InktrapRegular.otf");
+}
+
+@font-face {
+  font-family: NeueBold;
+  src: url("/fonts/Neue/PPNeueMachina-InktrapRegularItalic.otf");
+}
+
+@font-face {
+  font-family: Zesty;
+  src: url("/fonts/zestypersonaluse.otf");
+}
+
+@font-face {
+  font-family: Vertigo;
+  src: url("/fonts/vertigopersonaluse.otf");
+}
+
+@font-face {
+  font-family: Pexel;
+  src: url("/fonts/PexelGrotesk/PexelGrotesk-Regular.otf");
+}
+
+@font-face {
+  font-family: Bicrode;
+  src: url("/fonts/bicrodepersonaluse.ttf");
 }

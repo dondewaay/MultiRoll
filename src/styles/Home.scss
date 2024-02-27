@@ -39,13 +39,6 @@ $UNSELCOLOR: hsla(0, 0%, 100%, 0.5);
   cursor: default;
   h1 {
     font-size: 8rem;
-    span {
-      font-family: "NeueBold";
-      background: linear-gradient(45deg, rgb(255, 170, 0), red);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
   }
 }
 .canvas {
@@ -56,13 +49,30 @@ $UNSELCOLOR: hsla(0, 0%, 100%, 0.5);
   align-items: center;
   z-index: 0;
   color: white;
+  position: relative;
   .threed {
     height: 100%;
     width: 65vw;
     margin-left: auto;
   }
+  .bg-text {
+    font-size: 25rem;
+    color: #e43737;
+    font-family: "Bicrode";
+    font-style: italic;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    right: 0;
+    white-space: nowrap;
+    cursor: default;
+    span {
+      color: black;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: #e43737;
+    }
+  }
 }
-
 @media (max-width: 1100px) {
   .canvas {
     .threed {
@@ -73,9 +83,4 @@ $UNSELCOLOR: hsla(0, 0%, 100%, 0.5);
   }
   .billboard {
   }
-}
-
-@font-face {
-  font-family: NeueBold;
-  src: url("/fonts/Neue/PPNeueMachina-InktrapRegularItalic.otf");
 }
