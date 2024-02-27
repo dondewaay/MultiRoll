@@ -28,7 +28,7 @@ nav {
   align-items: flex-end;
   font-size: 1rem;
   h1 {
-    font-family: "Neue";
+    font-family: "Bicrode";
     white-space: nowrap;
     color: white;
     pointer-events: auto;
@@ -71,13 +71,6 @@ nav {
     display: block;
     text-align: center;
     padding-top: 3rem;
-    h1 {
-      color: white;
-    }
-    a img {
-      width: 20px;
-      height: 20px;
-    }
   }
 }
 
@@ -117,6 +110,6 @@ nav {
 }
 
 @font-face {
-  font-family: fac;
+  font-family: Attena;
   src: url("/fonts/Attena.otf");
 }

@@ -58,21 +58,24 @@ $UNSELCOLOR: hsla(0, 0%, 100%, 0.5);
     width: 65vw;
     margin-left: auto;
   }
-  .bg-text {
-    font-size: 25rem;
-    color: #e43737;
-    font-family: "Bicrode";
-    font-style: italic;
-    position: absolute;
-    z-index: -1;
-    bottom: 0;
-    right: 0;
-    white-space: nowrap;
-    cursor: default;
-    span {
-      color: black;
-      -webkit-text-stroke-width: 2px;
-      -webkit-text-stroke-color: #e43737;
+  .hide {
+    overflow: hidden;
+    .bg-text {
+      font-size: 25rem;
+      color: #e43737;
+      font-family: "Bicrode";
+      font-style: italic;
+      position: absolute;
+      z-index: -1;
+      bottom: 0;
+      right: 0;
+      white-space: nowrap;
+      cursor: default;
+      span {
+        color: black;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #e43737;
+      }
     }
   }
 }

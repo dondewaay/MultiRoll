@@ -18,9 +18,10 @@ export default function Header() {
           transition={{ type: "spring", duration: 1 }}
           whileHover={{
             scale: 1.07,
+            color: "#e43737",
           }}
         >
-          PolyRoll Beta
+          &nbsp;PolyRoll Beta
         </motion.h1>
       </Link>
       <a href="https://github.com/dondewaay/PolyRoll">
