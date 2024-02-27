@@ -1,5 +1,4 @@
 import DiceRoller from "../components/DiceRoller";
-
 import "../styles/Roll.scss";
 
 export default function Roll() {
