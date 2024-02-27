@@ -34,7 +34,7 @@ export default function Main() {
       <div className="hide">
         <motion.div
           className="bg-text"
-          animate={{ opacity: 1, x: "-100%" }}
+          animate={{ opacity: 1, x: "100%" }}
           transition={{ duration: 1000, repeat: Infinity, ease: "linear" }}
           while={{ x: 0 }}
         >

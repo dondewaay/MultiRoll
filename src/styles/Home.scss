@@ -56,9 +56,13 @@
     right: 0;
   }
   .hide {
-    width: 100%;
+    width: 100vw;
+    height: 50vh;
+    position: absolute;
+    z-index: -1;
     overflow: hidden;
     white-space: nowrap;
+    bottom: 0;
     .bg-text {
       font-size: 25rem;
       color: #e43737;
@@ -66,9 +70,8 @@
       font-style: italic;
       white-space: nowrap;
       position: absolute;
+      right: 0;
       bottom: 0;
-      left: 0;
-      z-index: -1;
       cursor: default;
       span {
         color: black;
