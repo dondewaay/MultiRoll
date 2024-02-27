@@ -41,7 +41,7 @@ export default function Main() {
           PolyRoll<span>PolyRoll</span>PolyRoll<span>PolyRoll</span>PolyRoll
           <span>PolyRoll</span>PolyRoll<span>PolyRoll</span>PolyRoll
           <span>PolyRoll</span>PolyRoll<span>PolyRoll</span>PolyRoll
-          <span>PolyRoll</span>PolyRoll
+          <span>PolyR</span>
         </motion.div>
       </div>
     </div>
