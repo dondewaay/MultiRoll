@@ -25,6 +25,7 @@ nav {
   align-items: flex-end;
   font-size: 1rem;
   h1 {
+    width: 300px;
     pointer-events: default;
     cursor: pointer;
     font-family: "Bicrode";
@@ -32,6 +33,7 @@ nav {
     color: white;
     pointer-events: auto;
     margin-right: auto;
+    text-align: center;
   }
   img {
     pointer-events: default;
@@ -69,9 +71,13 @@ nav {
 
 @media (max-width: 600px) {
   nav {
-    display: block;
+    display: flex;
     text-align: center;
     padding-top: 3rem;
+    justify-content: center;
+    h1 {
+      margin-right: 0;
+    }
   }
   img {
     display: none;
