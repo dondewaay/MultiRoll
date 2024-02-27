@@ -1,6 +1,3 @@
-/* VARIABLES */
-$UNSELCOLOR: hsla(0, 0%, 100%, 0.5);
-
 /* HTML RESET */
 
 * {
@@ -28,6 +25,8 @@ nav {
   align-items: flex-end;
   font-size: 1rem;
   h1 {
+    pointer-events: default;
+    cursor: pointer;
     font-family: "Bicrode";
     white-space: nowrap;
     color: white;
@@ -35,6 +34,8 @@ nav {
     margin-right: auto;
   }
   img {
+    pointer-events: default;
+    cursor: pointer;
     max-width: 25px;
     height: auto;
     margin-left: auto;
