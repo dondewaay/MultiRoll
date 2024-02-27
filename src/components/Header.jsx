@@ -21,7 +21,7 @@ export default function Header() {
             color: "#e43737",
           }}
         >
-          &nbsp;PolyRoll Beta
+          &nbsp;PolyRoll Beta&nbsp;
         </motion.h1>
       </Link>
       <a href="https://github.com/dondewaay/PolyRoll">
