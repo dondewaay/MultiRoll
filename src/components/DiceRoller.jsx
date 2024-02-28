@@ -78,35 +78,42 @@ const DiceRoller = () => {
     setIsNewCardClicked(!isNewCardClicked);
   };
 
-  const CharacterName = "Adam";
+  const CharacterName = "Character Select";
 
   return (
     <div className="roller">
       <div className="top">
-        <div className="hide">
+        <AnimatePresence>
           <motion.div
-            className="bg-text"
-            animate={{ opacity: 1, x: "-100%" }}
-            transition={{ duration: 1000, repeat: Infinity, ease: "linear" }}
-            while={{ x: 0 }}
+            className="hide"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
           >
-            {CharacterName}
-            <span>{CharacterName}</span>
-            {CharacterName}
-            <span>{CharacterName}</span>
-            {CharacterName}
-            <span>{CharacterName}</span>
-            {CharacterName}
-            <span>{CharacterName}</span>
-            {CharacterName}
-            <span>{CharacterName}</span>
-            {CharacterName}
-            <span>{CharacterName}</span>
-            {CharacterName}
-            <span>{CharacterName}</span>
-            {CharacterName}
+            <motion.div
+              className="bg-text"
+              animate={{ x: "-100%" }}
+              transition={{ duration: 1000, ease: "linear", repeat: Infinity }}
+              while={{ x: 0 }}
+            >
+              {CharacterName}&nbsp;
+              <span>{CharacterName}&nbsp; </span>
+              {CharacterName}&nbsp;
+              <span>{CharacterName}&nbsp; </span>
+              {CharacterName}&nbsp;
+              <span>{CharacterName}&nbsp; </span>
+              {CharacterName}&nbsp;
+              <span>{CharacterName}&nbsp; </span>
+              {CharacterName}&nbsp;
+              <span>{CharacterName}&nbsp; </span>
+              {CharacterName}&nbsp;
+              <span>{CharacterName}&nbsp; </span>
+              {CharacterName}&nbsp;
+              <span>{CharacterName}&nbsp; </span>
+              {CharacterName}&nbsp;
+            </motion.div>
           </motion.div>
-        </div>
+        </AnimatePresence>
         <AnimatePresence>
           {isNewCardClicked && (
             <motion.div

@@ -20,11 +20,11 @@
     .hide {
       width: 100vw;
       height: 100vh;
-      position: absolute;
+      position: fixed;
+      right: 0;
       z-index: -1;
       overflow: hidden;
       white-space: nowrap;
-      bottom: 0;
       .bg-text {
         font-size: 25rem;
         color: #374be4;
@@ -33,7 +33,7 @@
         white-space: nowrap;
         position: absolute;
         left: 0;
-        bottom: 0;
+        top: 0;
         cursor: default;
         span {
           color: black;
