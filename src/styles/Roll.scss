@@ -227,7 +227,15 @@
   width: 100vw;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1500px) {
+  .roller {
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(40vw, 1fr));
+    }
+  }
+}
+
+@media (max-width: 1000px) {
   .roller {
     .grid {
       grid-template-columns: repeat(auto-fit, minmax(60vw, 1fr));
