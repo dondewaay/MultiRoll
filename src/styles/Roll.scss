@@ -16,9 +16,10 @@
   .top {
     width: 100vw;
     height: 80vh;
+    rotate: 90;
     .hide {
       width: 100vw;
-      height: 50vh;
+      height: 100vh;
       position: absolute;
       z-index: -1;
       overflow: hidden;
@@ -26,18 +27,18 @@
       bottom: 0;
       .bg-text {
         font-size: 25rem;
-        color: #e43737;
+        color: #374be4;
         font-family: "Bicrode";
         font-style: italic;
         white-space: nowrap;
         position: absolute;
-        right: 0;
+        left: 0;
         bottom: 0;
         cursor: default;
         span {
           color: black;
           -webkit-text-stroke-width: 2px;
-          -webkit-text-stroke-color: #e43737;
+          -webkit-text-stroke-color: #374be4;
         }
       }
     }
@@ -227,4 +228,9 @@
 }
 
 @media (max-width: 1100px) {
+  .roller {
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(60vw, 1fr));
+    }
+  }
 }

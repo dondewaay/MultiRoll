@@ -77,20 +77,34 @@ const DiceRoller = () => {
     console.log("NewCard clicked");
     setIsNewCardClicked(!isNewCardClicked);
   };
+
+  const CharacterName = "Adam";
+
   return (
     <div className="roller">
       <div className="top">
         <div className="hide">
           <motion.div
             className="bg-text"
-            animate={{ opacity: 1, x: "100%" }}
+            animate={{ opacity: 1, x: "-100%" }}
             transition={{ duration: 1000, repeat: Infinity, ease: "linear" }}
             while={{ x: 0 }}
           >
-            PolyRoll<span>PolyRoll</span>PolyRoll<span>PolyRoll</span>PolyRoll
-            <span>PolyRoll</span>PolyRoll<span>PolyRoll</span>PolyRoll
-            <span>PolyRoll</span>PolyRoll<span>PolyRoll</span>PolyRoll
-            <span>PolyRoll</span>PolyRoll
+            {CharacterName}
+            <span>{CharacterName}</span>
+            {CharacterName}
+            <span>{CharacterName}</span>
+            {CharacterName}
+            <span>{CharacterName}</span>
+            {CharacterName}
+            <span>{CharacterName}</span>
+            {CharacterName}
+            <span>{CharacterName}</span>
+            {CharacterName}
+            <span>{CharacterName}</span>
+            {CharacterName}
+            <span>{CharacterName}</span>
+            {CharacterName}
           </motion.div>
         </div>
         <AnimatePresence>
