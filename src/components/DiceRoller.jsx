@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
-import CharacterSelect from "./CharacterSelect";
 import NewPreset from "./NewPreset";
 import NewCharacter from "./NewCharacter";
 import ScrollingText from "./ScrollingText";
 import { motion, AnimatePresence } from "framer-motion";
-import { render } from "react-dom";
 
 const DiceRoller = () => {
   const [isNewCardClicked, setIsNewCardClicked] = useState(false);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [renderNewChar, setRenderNewChar] = useState(false);
+  const [characters, setCharacters] = useState(() => {
+    const storedCharacters = localStorage.getItem("characters");
+    return storedCharacters ? JSON.parse(storedCharacters) : [];
+  });
   const [presets, setPresets] = useState(() => {
     const storedPresets = localStorage.getItem("presets");
     return storedPresets ? JSON.parse(storedPresets) : [];
@@ -30,9 +32,6 @@ const DiceRoller = () => {
     char: selectedCharacter,
   });
 
-
-  
-
   const [lastUsedId, setLastUsedId] = useState(() => {
     const storedLastUsedId = localStorage.getItem("lastUsedId");
     return storedLastUsedId ? parseInt(storedLastUsedId) : 0;
@@ -45,6 +44,18 @@ const DiceRoller = () => {
   useEffect(() => {
     localStorage.setItem("presets", JSON.stringify([...presets]));
   }, [presets]);
+
+  useEffect(() => {
+    localStorage.setItem("characters", JSON.stringify([...characters]));
+  }, [characters]);
+
+  const addCharacter = (newCharacter) => {
+    const newId = lastUsedId + 1;
+    newCharacter.id = newId;
+    setCharacters([...characters, newCharacter]);
+    setLastUsedId(newId);
+    handleRenderNewChar();
+  };
 
   useEffect(() => {
     localStorage.setItem("lastUsedId", lastUsedId.toString());
@@ -83,7 +94,7 @@ const DiceRoller = () => {
       d20: 0,
       d100: 0,
       mod: 0,
-      character: null,
+      id: selectedCharacter.id,
     });
     setLastUsedId(newId);
   };
@@ -98,15 +109,48 @@ const DiceRoller = () => {
     <div className="roller">
       <div className="top">
         <div className="big-text"></div>
-        {renderNewChar ? <NewCharacter set={handleRenderNewChar} /> : null}
+        <select
+          name="Character Select"
+          id="charsel"
+          value={selectedCharacter ? selectedCharacter.name : ""}
+          onChange={(e) => {
+            const selectedCharacterName = e.target.value;
+            const selectedCharacter = characters.find(
+              (character) => character.name === selectedCharacterName
+            );
+            setSelectedCharacter(selectedCharacter);
+          }}
+        >
+          <option value="">Select Character</option>
+          {characters.map((character) => (
+            <option key={character.id} value={character.name}>
+              {character.name}
+            </option>
+          ))}
+        </select>
+        <button className="char-btn" onClick={handleRenderNewChar}>
+          New
+          <br />
+          Character
+        </button>
+        {renderNewChar && (
+          <NewCharacter set={handleRenderNewChar} addCharacter={addCharacter} />
+        )}
         <AnimatePresence>
           <motion.div
             className="hide"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 1 }}
           >
-            <ScrollingText content={CharacterName} />
+            <ScrollingText
+              content={
+                selectedCharacter
+                  ? selectedCharacter.characterClass
+                  : "CharacterSelect"
+              }
+            />
           </motion.div>
         </AnimatePresence>
         {isNewCardClicked && (
@@ -121,18 +165,20 @@ const DiceRoller = () => {
       </div>
       {selectedCharacter ? (
         <div className="grid">
-          {presets.map((preset) => (
-            <Card
-              key={preset.id}
-              id={preset.id}
-              name={preset.name}
-              config={preset.config}
-              onDelete={deletePreset}
-              handleConfig={handlePresetConfigChange}
-              newPreset={addPreset}
-              isClicked={isNewCardClicked}
-            />
-          ))}
+          {presets
+            .filter((preset) => preset.id === selectedCharacter.id)
+            .map((preset) => (
+              <Card
+                key={preset.id}
+                id={preset.id}
+                name={preset.name}
+                config={preset.config}
+                onDelete={deletePreset}
+                handleConfig={handlePresetConfigChange}
+                newPreset={addPreset}
+                isClicked={isNewCardClicked}
+              />
+            ))}
           <AnimatePresence>
             <motion.div
               initial={{ background: "rgba(255, 255, 255, 0.29)" }}

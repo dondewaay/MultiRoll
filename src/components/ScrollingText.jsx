@@ -2,10 +2,12 @@ import { motion } from "framer-motion";
 
 const ScrollingText = ({ content }) => {
   return (
+    
     <motion.div
-      className="bg-text"
+      className="scroll-text"
+      initial={{ color: "#374be4" }}
       animate={{ x: "-100%" }}
-      transition={{ duration: 1000, ease: "linear", repeat: Infinity }}
+      transition={{ duration: 800, ease: "linear", repeat: Infinity }}
       while={{ x: 0 }}
     >
       {content}&nbsp;
