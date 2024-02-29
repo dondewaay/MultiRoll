@@ -28,7 +28,7 @@ export default function Main() {
           to <span>Roll</span>
         </h1>
         <Link to="/PolyRoll/roll">
-          <button className="btn">Start</button>
+          <button className="btn-home">Start</button>
         </Link>
       </motion.div>
       <div className="hide">

@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import CharacterSelect from "./CharacterSelect";
+import NewPreset from "./NewPreset";
+import NewCharacter from "./NewCharacter";
 import { motion, AnimatePresence } from "framer-motion";
+import { render } from "react-dom";
 
 const DiceRoller = () => {
+  const [isNewCardClicked, setIsNewCardClicked] = useState(false);
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
+  const [renderNewChar, setRenderNewChar] = useState(false);
   const [presets, setPresets] = useState(() => {
     const storedPresets = localStorage.getItem("presets");
     return storedPresets ? JSON.parse(storedPresets) : [];
@@ -20,13 +26,17 @@ const DiceRoller = () => {
     d20: 0,
     d100: 0,
     mod: 0,
+    char: selectedCharacter,
   });
+
   const [lastUsedId, setLastUsedId] = useState(() => {
     const storedLastUsedId = localStorage.getItem("lastUsedId");
     return storedLastUsedId ? parseInt(storedLastUsedId) : 0;
   });
 
-  const [isNewCardClicked, setIsNewCardClicked] = useState(false);
+  const handleRenderNewChar = () => {
+    setRenderNewChar(!renderNewChar);
+  };
 
   useEffect(() => {
     localStorage.setItem("presets", JSON.stringify([...presets]));
@@ -69,12 +79,12 @@ const DiceRoller = () => {
       d20: 0,
       d100: 0,
       mod: 0,
+      character: null,
     });
     setLastUsedId(newId);
   };
 
   const handleNewCardClick = () => {
-    console.log("NewCard clicked");
     setIsNewCardClicked(!isNewCardClicked);
   };
 
@@ -83,6 +93,7 @@ const DiceRoller = () => {
   return (
     <div className="roller">
       <div className="top">
+        {renderNewChar ? <NewCharacter set={handleRenderNewChar} /> : null}
         <AnimatePresence>
           <motion.div
             className="hide"
@@ -114,143 +125,17 @@ const DiceRoller = () => {
             </motion.div>
           </motion.div>
         </AnimatePresence>
-        <AnimatePresence>
-          {isNewCardClicked && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="blur"
-            >
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ delay: 0.3 }}
-                className="new"
-              >
-                <h1>Add a Preset:</h1>
-                <div className="input-box">
-                  <button className="del" onClick={handleNewCardClick}>
-                    X
-                  </button>
-                  <input
-                    className="name"
-                    type="text"
-                    placeholder=" Preset Name"
-                    value={presetName}
-                    onChange={handlePresetNameChange}
-                  />
-                  <div className="entry">
-                    <label htmlFor="d2">d2: </label>
-                    <input
-                      type="number"
-                      id="d2"
-                      name="d2"
-                      value={presetConfig.d2}
-                      onChange={handlePresetConfigChange}
-                    />
-                  </div>
-                  <div className="entry">
-                    <label htmlFor="d3">d3: </label>
-                    <input
-                      type="number"
-                      id="d3"
-                      name="d3"
-                      value={presetConfig.d3}
-                      onChange={handlePresetConfigChange}
-                    />
-                  </div>
-                  <div className="entry">
-                    <label htmlFor="d4">d4: </label>
-                    <input
-                      type="number"
-                      id="d4"
-                      name="d4"
-                      value={presetConfig.d4}
-                      onChange={handlePresetConfigChange}
-                    />
-                  </div>
-                  <div className="entry">
-                    <label htmlFor="d6">d6: </label>
-                    <input
-                      type="number"
-                      id="d6"
-                      name="d6"
-                      value={presetConfig.d6}
-                      onChange={handlePresetConfigChange}
-                    />
-                  </div>
-                  <div className="entry">
-                    <label htmlFor="d8">d8: </label>
-                    <input
-                      type="number"
-                      id="d8"
-                      name="d8"
-                      value={presetConfig.d8}
-                      onChange={handlePresetConfigChange}
-                    />
-                  </div>
-                  <div className="entry">
-                    <label htmlFor="d10">d10: </label>
-                    <input
-                      type="number"
-                      id="d10"
-                      name="d10"
-                      value={presetConfig.d10}
-                      onChange={handlePresetConfigChange}
-                    />
-                  </div>
-                  <div className="entry">
-                    <label htmlFor="d12">d12: </label>
-                    <input
-                      type="number"
-                      id="d12"
-                      name="d12"
-                      value={presetConfig.d12}
-                      onChange={handlePresetConfigChange}
-                    />
-                  </div>
-                  <div className="entry">
-                    <label htmlFor="d20">d20: </label>
-                    <input
-                      type="number"
-                      id="d20"
-                      name="d20"
-                      value={presetConfig.d20}
-                      onChange={handlePresetConfigChange}
-                    />
-                  </div>
-                  <div className="entry">
-                    <label htmlFor="d100">d100: </label>
-                    <input
-                      type="number"
-                      id="d100"
-                      name="d100"
-                      value={presetConfig.d100}
-                      onChange={handlePresetConfigChange}
-                    />
-                  </div>
-                  <div className="entry">
-                    <label htmlFor="mod">Modifier: </label>
-                    <input
-                      type="number"
-                      id="mod"
-                      name="mod"
-                      value={presetConfig.mod}
-                      onChange={handlePresetConfigChange}
-                    />
-                  </div>
-                </div>
-                <button onClick={addPreset} className="btn">
-                  Add
-                </button>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {isNewCardClicked && (
+          <NewPreset
+            render={handleNewCardClick}
+            config={presetConfig}
+            name={presetName}
+            handleName={handlePresetNameChange}
+            newPreset={addPreset}
+          />
+        )}
       </div>
-      <AnimatePresence>
+      {selectedCharacter ? (
         <div className="grid">
           {presets.map((preset) => (
             <Card
@@ -259,6 +144,9 @@ const DiceRoller = () => {
               name={preset.name}
               config={preset.config}
               onDelete={deletePreset}
+              handleConfig={handlePresetConfigChange}
+              newPreset={addPreset}
+              isClicked={isNewCardClicked}
             />
           ))}
           <AnimatePresence>
@@ -272,7 +160,9 @@ const DiceRoller = () => {
             </motion.div>
           </AnimatePresence>
         </div>
-      </AnimatePresence>
+      ) : (
+        <div className="extra-div" />
+      )}
     </div>
   );
 };

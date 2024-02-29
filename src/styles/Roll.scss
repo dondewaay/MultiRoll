@@ -9,6 +9,11 @@
   width: 100vw;
 }
 
+.extra-div {
+  width: 100vw;
+  height: 20vh;
+}
+
 .roller {
   font-family: "Neue";
   color: white;
@@ -158,28 +163,30 @@
         padding: 0;
         margin: 0;
       }
-      .btn {
-        font-family: "Neue";
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-        border: 2px solid white;
-        font-size: 34px;
-        margin-top: 1.5rem;
-        color: white;
-        height: 75px;
-        width: 110px;
-        border-radius: 1px;
-        background: black;
-        transition: 0.2s ease-in-out;
-        cursor: pointer;
-        &:hover {
-          transform: translatey(-5px);
-          border: 5px solid white;
-          box-shadow: 0px 0px 15px 3px white;
-        }
-      }
     }
+  }
+}
+
+.btn {
+  font-family: "Neue";
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  border: 2px solid white;
+  font-size: 34px;
+  margin-top: 1.5rem;
+  color: white;
+  height: 75px;
+  width: 110px;
+  border-radius: 1px;
+  background: black;
+  transition: 0.2s ease-in-out;
+  padding-top: 5px;
+  cursor: pointer;
+  &:hover {
+    transform: translatey(-5px);
+    border: 5px solid white;
+    box-shadow: 0px 0px 15px 3px white;
   }
 }
 
@@ -197,6 +204,8 @@
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(8px);
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .del {
@@ -225,6 +234,42 @@
   z-index: 998;
   height: 100vh;
   width: 100vw;
+}
+
+.new-char {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  border: 2px solid white;
+  width: 600px;
+  height: 350px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Neue";
+  h2 {
+    font-size: 40px;
+    font-family: "Neue";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  h3 {
+    font-family: "Neue";
+    font-size: 26px;
+    margin: 5px;
+    input {
+      font-size: 26px;
+      border: 1px solid white;
+      background-color: black;
+      color: white;
+      width: 200px;
+      padding: 4px;
+    }
+  }
 }
 
 @media (max-width: 1500px) {
