@@ -3,6 +3,7 @@ import Card from "./Card";
 import CharacterSelect from "./CharacterSelect";
 import NewPreset from "./NewPreset";
 import NewCharacter from "./NewCharacter";
+import ScrollingText from "./ScrollingText";
 import { motion, AnimatePresence } from "framer-motion";
 import { render } from "react-dom";
 
@@ -28,6 +29,9 @@ const DiceRoller = () => {
     mod: 0,
     char: selectedCharacter,
   });
+
+
+  
 
   const [lastUsedId, setLastUsedId] = useState(() => {
     const storedLastUsedId = localStorage.getItem("lastUsedId");
@@ -93,6 +97,7 @@ const DiceRoller = () => {
   return (
     <div className="roller">
       <div className="top">
+        <div className="big-text"></div>
         {renderNewChar ? <NewCharacter set={handleRenderNewChar} /> : null}
         <AnimatePresence>
           <motion.div
@@ -101,28 +106,7 @@ const DiceRoller = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <motion.div
-              className="bg-text"
-              animate={{ x: "-100%" }}
-              transition={{ duration: 1000, ease: "linear", repeat: Infinity }}
-              while={{ x: 0 }}
-            >
-              {CharacterName}&nbsp;
-              <span>{CharacterName}&nbsp; </span>
-              {CharacterName}&nbsp;
-              <span>{CharacterName}&nbsp; </span>
-              {CharacterName}&nbsp;
-              <span>{CharacterName}&nbsp; </span>
-              {CharacterName}&nbsp;
-              <span>{CharacterName}&nbsp; </span>
-              {CharacterName}&nbsp;
-              <span>{CharacterName}&nbsp; </span>
-              {CharacterName}&nbsp;
-              <span>{CharacterName}&nbsp; </span>
-              {CharacterName}&nbsp;
-              <span>{CharacterName}&nbsp; </span>
-              {CharacterName}&nbsp;
-            </motion.div>
+            <ScrollingText content={CharacterName} />
           </motion.div>
         </AnimatePresence>
         {isNewCardClicked && (

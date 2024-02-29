@@ -21,6 +21,13 @@ const NewCharacter = ({ set }) => {
           Class:&nbsp;
           <input type="text" />
         </h3>
+        <h3>
+          Color:&nbsp;
+          <select name="color" id="color">
+            <option value="#374be4">Blue</option>
+            <option value="#e43737">Red</option>
+          </select>
+        </h3>
         <button className="btn">Add</button>
       </div>
     </motion.div>
