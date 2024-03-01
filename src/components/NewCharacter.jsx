@@ -56,6 +56,7 @@ const NewCharacter = ({ set, addCharacter }) => {
           >
             <option value="#374be4">Blue</option>
             <option value="#e43737">Red</option>
+            <option value="#e43737">Yellow</option>
           </select>
         </h3>
         <button className="btn" onClick={handleAddCharacter}>
