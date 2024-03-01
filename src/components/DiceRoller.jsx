@@ -29,7 +29,7 @@ const DiceRoller = () => {
     d20: 0,
     d100: 0,
     mod: 0,
-    char: selectedCharacter,
+    id: selectedCharacter.id,
   });
 
   const [lastUsedId, setLastUsedId] = useState(() => {
