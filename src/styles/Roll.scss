@@ -20,28 +20,26 @@
   width: 100%;
   .top {
     width: 100%;
-    height: 80vh;
+    height: 85vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
     .char-btn {
       font-family: "Neue";
-      position: absolute;
       border: 2px solid white;
       font-size: 26px;
-      margin-top: 1.5rem;
       color: white;
       height: 90px;
       width: 170px;
       border-radius: 1px;
       background: black;
-      transition: 0.2s ease-in-out;
       padding-top: 5px;
+      transition: 0.2s ease-in-out;
+      margin-right: 20px;
       cursor: pointer;
       &:hover {
-        transform: translatey(-5px);
         border: 5px solid white;
         box-shadow: 0px 0px 15px 3px white;
       }
@@ -53,13 +51,14 @@
       background-color: black;
       color: white;
       padding: 4px;
-      border: 1px solid white;
+      border: 2px solid white;
       border-radius: 2px;
       appearance: none;
       width: auto;
-      height: auto;
+      height: 90px;
       text-align: center;
       padding: 20px;
+      box-shadow: black 0px 10px 20px;
     }
     .hide {
       width: 100vw;
@@ -192,8 +191,11 @@
         position: absolute;
         top: 20px;
         left: 20px;
-        padding: 0;
+        max-width: 310px;
         margin: 0;
+        overflow-wrap: anywhere;
+        overflow: hide;
+        text-align: left;
       }
       .result {
         position: absolute;
@@ -221,6 +223,7 @@
   background: black;
   transition: 0.2s ease-in-out;
   padding-top: 5px;
+  box-shadow: black 0px 10px 20px;
   cursor: pointer;
   &:hover {
     transform: translatey(-5px);
@@ -267,6 +270,7 @@
 }
 
 .char-del {
+  margin: 20px;
   width: 50px;
   height: 50px;
   color: white;
@@ -274,8 +278,9 @@
   border: 3px solid white;
   border-radius: 1px;
   font-size: 34px;
-  cursor: pointer;
+  box-shadow: black 0px 10px 20px;
   transition: 0.2s ease-in-out;
+  cursor: pointer;
   &:hover {
     box-shadow: 0px 0px 15px 3px red;
     border: 3px solid red;
@@ -284,7 +289,9 @@
 }
 
 .select-contain {
-
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
 }
 
 .blur {
@@ -302,14 +309,15 @@
   background-color: black;
   border: 2px solid white;
   border-radius: 3px;
-  width: 600px;
-  height: 350px;
+  width: 500px;
+  height: 400px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   font-family: "Neue";
+  box-shadow: black 0px 10px 20px;
   h2 {
     font-size: 40px;
     font-family: "Neue";
@@ -317,16 +325,39 @@
     top: 20px;
     left: 20px;
   }
-  h3 {
+  div {
     font-family: "Neue";
     font-size: 26px;
     margin: 5px;
+    display: flex;
+    flex-direction: row;
+    width: 340px;
+    justify-content: space-between;
+    &::after {
+      justify-content: start;
+    }
+    h3 {
+      width: 100px;
+      text-align: left;
+      font-size: 26px;
+      display: flex;
+      align-items: center;
+    }
+    .dropdown {
+      font-size: 26px;
+      height: auto;
+      border: 1px solid white;
+      background-color: black;
+      color: white;
+      padding: 4px;
+      border-radius: 2px;
+    }
     input {
       font-size: 26px;
       border: 1px solid white;
       background-color: black;
       color: white;
-      width: 250px;
+      width: 220px;
       padding: 4px;
       border-radius: 2px;
     }
@@ -334,15 +365,11 @@
 }
 
 .big-text {
-  font-size: 96px;
+  font-size: 120px;
   font-family: "Neue";
   text-align: center;
-}
-
-.char-info {
-  font-size: 60px;
-  span {
-  }
+  margin: 40px;
+  text-shadow: black 0px 5px 15px;
 }
 
 @media (max-width: 1500px) {

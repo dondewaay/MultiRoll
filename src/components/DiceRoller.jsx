@@ -116,46 +116,52 @@ const DiceRoller = () => {
     <div className="roller">
       <div className="top">
         {selectedCharacter ? (
-          <div className="char-info">
-            {selectedCharacter.name} {selectedCharacter.race}
-            <span>{selectedCharacter.className}</span>
-          </div>
+          <div className="big-text">{selectedCharacter.name}</div>
         ) : (
-          <div className="big-text">Create or Select a Character:</div>
+          <div className="big-text">
+            Create or Select
+            <br />a Character
+          </div>
         )}
-        <div className="big-text"></div>
         <div className="select-contain">
-          <select
-            name="Character Select"
-            id="charsel"
-            value={selectedCharacter ? selectedCharacter.name : ""}
-            onChange={(e) => {
-              const selectedCharacterName = e.target.value;
-              const selectedCharacter = characters.find(
-                (character) => character.name === selectedCharacterName
-              );
-              setSelectedCharacter(selectedCharacter);
-            }}
-          >
-            <option value="">Select Character</option>
-            {characters.map((character) => (
-              <option key={character.id} value={character.name}>
-                {character.name}
-              </option>
-            ))}
-          </select>
-          <button
-            className="char-del"
-            onClick={() => deleteChar(selectedCharacter.id)}
-          >
-            X
+          <button className="char-btn" onClick={handleRenderNewChar}>
+            New
+            <br />
+            Character
           </button>
+
+          {characters ? (
+            <div>
+              <select
+                name="Character Select"
+                id="charsel"
+                value={selectedCharacter ? selectedCharacter.name : ""}
+                onChange={(e) => {
+                  const selectedCharacterName = e.target.value;
+                  const selectedCharacter = characters.find(
+                    (character) => character.name === selectedCharacterName
+                  );
+                  setSelectedCharacter(selectedCharacter);
+                }}
+              >
+                <option value="">Select Character</option>
+                {characters.map((character) => (
+                  <option key={character.id} value={character.name}>
+                    {character.name}
+                  </option>
+                ))}
+              </select>
+              <button
+                className="char-del"
+                onClick={() => deleteChar(selectedCharacter.id)}
+              >
+                X
+              </button>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
-        <button className="char-btn" onClick={handleRenderNewChar}>
-          New
-          <br />
-          Character
-        </button>
         {renderNewChar && (
           <NewCharacter set={handleRenderNewChar} addCharacter={addCharacter} />
         )}

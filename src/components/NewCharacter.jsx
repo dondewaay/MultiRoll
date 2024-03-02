@@ -49,43 +49,44 @@ const NewCharacter = ({ set, addCharacter }) => {
           X
         </button>
         <h2>New Character</h2>
-        <h3>
-          Name:&nbsp;
+        <div>
+          <h3>Name:&nbsp;</h3>
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-        </h3>
-        <h3>
-          Class:&nbsp;
+        </div>
+        <div>
+          <h3>Class:&nbsp;</h3>
           <input
             type="text"
             value={className}
             onChange={(e) => setClassName(e.target.value)}
           />
-        </h3>
-        <h3>
-          Race:&nbsp;
+        </div>
+        <div>
+          <h3>Race:&nbsp;</h3>
           <input
             type="text"
             value={race}
             onChange={(e) => setRace(e.target.value)}
           />
-        </h3>
-        <h3>
-          Color:&nbsp;
+        </div>
+        <div>
+          <h3>Color:&nbsp;</h3>
           <select
             name="color"
             id="color"
             value={color}
             onChange={(e) => setColor(e.target.value)}
+            className="dropdown"
           >
             <option value="#374be4">Blue</option>
             <option value="#e43737">Red</option>
             <option value="#cde437">Yellow</option>
           </select>
-        </h3>
+        </div>
         <button className="btn" onClick={handleAddCharacter}>
           Add
         </button>
