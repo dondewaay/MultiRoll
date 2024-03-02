@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import NewPreset from "./NewPreset";
 import NewCharacter from "./NewCharacter";
 import ScrollingText from "./ScrollingText";
 import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const DiceRoller = () => {
   const [isNewCardClicked, setIsNewCardClicked] = useState(false);
