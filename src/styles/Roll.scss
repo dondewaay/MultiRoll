@@ -28,8 +28,6 @@
     .char-btn {
       font-family: "Neue";
       position: absolute;
-      right: 150px;
-      top: 40%;
       border: 2px solid white;
       font-size: 26px;
       margin-top: 1.5rem;
@@ -64,7 +62,7 @@
     }
     .hide {
       width: 100vw;
-      height: 40vh;
+      height: 50vh;
       position: fixed;
       right: 0;
       top: 0;
@@ -316,6 +314,12 @@
 .big-text {
   font-size: 96px;
   font-family: "Neue";
+}
+
+.char-info {
+  font-size: 60px;
+  span {
+  }
 }
 
 @media (max-width: 1500px) {

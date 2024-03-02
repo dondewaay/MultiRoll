@@ -1,21 +1,40 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const STORAGE_KEY = "nextCharacterId";
+
+const getNewId = () => {
+  const storedId = localStorage.getItem(STORAGE_KEY);
+  return storedId ? parseInt(storedId, 10) : 1;
+};
 
 const NewCharacter = ({ set, addCharacter }) => {
   const [name, setName] = useState("");
-  const [characterClass, setCharacterClass] = useState("");
+  const [className, setClassName] = useState("");
   const [color, setColor] = useState("#374be4");
+  const [race, setRace] = useState("");
+  const [nextId, setNextId] = useState(getNewId());
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, nextId);
+  }, [nextId]);
 
   const handleAddCharacter = () => {
+    const newCharacterId = nextId;
+    setNextId(nextId + 1);
+
     const newCharacter = {
+      id: newCharacterId,
       name: name,
-      characterClass: characterClass,
+      className: className,
       color: color,
+      race: race,
     };
     addCharacter(newCharacter);
     setName("");
-    setCharacterClass("");
+    setClassName("");
     setColor("");
+    setRace("");
   };
 
   return (
@@ -42,8 +61,16 @@ const NewCharacter = ({ set, addCharacter }) => {
           Class:&nbsp;
           <input
             type="text"
-            value={characterClass}
-            onChange={(e) => setCharacterClass(e.target.value)}
+            value={className}
+            onChange={(e) => setClassName(e.target.value)}
+          />
+        </h3>
+        <h3>
+          Race:&nbsp;
+          <input
+            type="text"
+            value={race}
+            onChange={(e) => setRace(e.target.value)}
           />
         </h3>
         <h3>
@@ -56,7 +83,7 @@ const NewCharacter = ({ set, addCharacter }) => {
           >
             <option value="#374be4">Blue</option>
             <option value="#e43737">Red</option>
-            <option value="#e4d837">Yellow</option>
+            <option value="#cde437">Yellow</option>
           </select>
         </h3>
         <button className="btn" onClick={handleAddCharacter}>
