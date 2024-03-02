@@ -15,7 +15,7 @@ const NewCharacter = ({ set, addCharacter }) => {
     addCharacter(newCharacter);
     setName("");
     setCharacterClass("");
-    setColor("#374be4");
+    setColor("");
   };
 
   return (
@@ -56,7 +56,7 @@ const NewCharacter = ({ set, addCharacter }) => {
           >
             <option value="#374be4">Blue</option>
             <option value="#e43737">Red</option>
-            <option value="#e43737">Yellow</option>
+            <option value="#e4d837">Yellow</option>
           </select>
         </h3>
         <button className="btn" onClick={handleAddCharacter}>

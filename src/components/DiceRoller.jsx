@@ -29,7 +29,7 @@ const DiceRoller = () => {
     d20: 0,
     d100: 0,
     mod: 0,
-    char: selectedCharacter,
+    id: 0,
   });
 
   const [lastUsedId, setLastUsedId] = useState(() => {
@@ -146,9 +146,14 @@ const DiceRoller = () => {
           >
             <ScrollingText
               content={
-                selectedCharacter
+                selectedCharacter && selectedCharacter.characterClass
                   ? selectedCharacter.characterClass
                   : "CharacterSelect"
+              }
+              colorSel={
+                selectedCharacter && selectedCharacter.color
+                  ? selectedCharacter.color
+                  : "#374be4"
               }
             />
           </motion.div>
@@ -159,6 +164,7 @@ const DiceRoller = () => {
             config={presetConfig}
             name={presetName}
             handleName={handlePresetNameChange}
+            handleConfig={handlePresetConfigChange}
             newPreset={addPreset}
           />
         )}
@@ -166,7 +172,7 @@ const DiceRoller = () => {
       {selectedCharacter ? (
         <div className="grid">
           {presets
-            .filter((preset) => preset.id === selectedCharacter.id)
+            .filter((preset) => preset.config.id === selectedCharacter.id)
             .map((preset) => (
               <Card
                 key={preset.id}
