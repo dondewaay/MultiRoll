@@ -27,16 +27,18 @@
     justify-content: center;
     position: relative;
     .char-btn {
+      padding: 4px;
       font-family: "Neue";
       border: 2px solid white;
       font-size: 40px;
       color: white;
       height: 90px;
-      width: 170px;
+      width: 120px;
       border-radius: 1px;
       background: black;
-      padding-top: 5px;
       transition: 0.2s ease-in-out;
+      width: auto;
+      padding: 20px;
       box-shadow: black 0px 10px 20px;
       cursor: pointer;
       &:hover {
@@ -45,12 +47,9 @@
       }
     }
     .selectacharacter {
-      right: 40%;
-      top: 60%;
       font-size: 40px;
       background-color: black;
       color: white;
-      padding: 4px;
       border: 2px solid white;
       border-radius: 2px;
       appearance: none;
