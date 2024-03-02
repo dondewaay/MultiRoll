@@ -142,6 +142,7 @@ const DiceRoller = () => {
           <br />
           Character
         </button>
+        <button className="char-btn">Delete Current Character</button>
         {renderNewChar && (
           <NewCharacter set={handleRenderNewChar} addCharacter={addCharacter} />
         )}

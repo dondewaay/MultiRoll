@@ -10,8 +10,8 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/PolyRoll" element={<Home />} />
-        <Route path="/PolyRoll/roll" element={<Roll />} />
+        <Route path="/MultiRoll" element={<Home />} />
+        <Route path="/MultiRoll/roll" element={<Roll />} />
       </Routes>
       <Footer />
     </>

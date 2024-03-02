@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <nav>
-      <Link className="link" to="/PolyRoll/" style={linkStyle}>
+      <Link className="link" to="/MultiRoll/" style={linkStyle}>
         <motion.h1
           className="menu"
           initial={{ y: -50 }}
@@ -21,10 +21,10 @@ export default function Header() {
             color: "#e43737",
           }}
         >
-          &nbsp;PolyRoll Beta&nbsp;
+          &nbsp;MultiRoll Beta&nbsp;
         </motion.h1>
       </Link>
-      <a href="https://github.com/dondewaay/PolyRoll">
+      <a href="https://github.com/dondewaay/MultiRoll">
         <motion.img
           className="menu"
           initial={{ y: -50 }}
