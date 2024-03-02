@@ -30,6 +30,7 @@ const DiceRoller = () => {
     d100: 0,
     mod: 0,
     id: 0,
+    char: 0,
   });
 
   const [lastUsedId, setLastUsedId] = useState(() => {
@@ -94,7 +95,8 @@ const DiceRoller = () => {
       d20: 0,
       d100: 0,
       mod: 0,
-      id: selectedCharacter.id,
+      id: 0,
+      char: selectedCharacter.id,
     });
     setLastUsedId(newId);
   };
@@ -180,7 +182,7 @@ const DiceRoller = () => {
       {selectedCharacter ? (
         <div className="grid">
           {presets
-            .filter((preset) => preset.config.id === selectedCharacter.id)
+            .filter((preset) => preset.config.char === selectedCharacter.id)
             .map((preset) => (
               <Card
                 key={preset.id}
