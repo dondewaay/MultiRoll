@@ -156,7 +156,7 @@ const DiceRoller = () => {
             <ScrollingText
               content={
                 selectedCharacter && selectedCharacter.className
-                  ? selectedCharacter.className
+                  ? selectedCharacter.className.replace(/\s/g, "")
                   : "CharacterSelect"
               }
               colorSel={

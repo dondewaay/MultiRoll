@@ -15,21 +15,21 @@ const ScrollingText = ({ content, colorSel }) => {
           transition={{ duration: 800, ease: "linear", repeat: Infinity }}
           while={{ x: 0 }}
         >
-          {content}&nbsp;
-          <span>{content}&nbsp; </span>
-          {content}&nbsp;
-          <span>{content}&nbsp; </span>
-          {content}&nbsp;
-          <span>{content}&nbsp; </span>
-          {content}&nbsp;
-          <span>{content}&nbsp; </span>
-          {content}&nbsp;
-          <span>{content}&nbsp; </span>
-          {content}&nbsp;
-          <span>{content}&nbsp; </span>
-          {content}&nbsp;
-          <span>{content}&nbsp; </span>
-          {content}&nbsp;
+          {content}
+          <span>{content} </span>
+          {content}
+          <span>{content} </span>
+          {content}
+          <span>{content} </span>
+          {content}
+          <span>{content} </span>
+          {content}
+          <span>{content} </span>
+          {content}
+          <span>{content} </span>
+          {content}
+          <span>{content} </span>
+          {content}
         </motion.div>
       </AnimatePresence>
     </div>
