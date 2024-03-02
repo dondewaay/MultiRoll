@@ -108,6 +108,14 @@ const DiceRoller = () => {
   return (
     <div className="roller">
       <div className="top">
+        {selectedCharacter ? (
+          <div className="char-info">
+            {selectedCharacter.name} {selectedCharacter.race}
+            <span>{selectedCharacter.className}</span>
+          </div>
+        ) : (
+          <div className="big-text">Create or Select a Character:</div>
+        )}
         <div className="big-text"></div>
         <select
           name="Character Select"
