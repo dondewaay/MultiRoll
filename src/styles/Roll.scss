@@ -29,12 +29,12 @@
     .char-btn {
       padding: 4px;
       font-family: "Neue";
-      border: 2px solid white;
+      border: 3px solid white;
+      border-radius: 2px;
       font-size: 80px;
       color: white;
       height: 90px;
       width: 90px;
-      border-radius: 1px;
       background: black;
       transition: 0.2s ease-in-out;
       padding: 20px;
@@ -52,7 +52,7 @@
       font-size: 40px;
       background-color: black;
       color: white;
-      border: 2px solid white;
+      border: 3px solid white;
       border-radius: 2px;
       appearance: none;
       width: auto;
@@ -284,14 +284,14 @@
   color: white;
   background-color: black;
   border: 3px solid white;
-  border-radius: 1px;
+  border-radius: 2px;
   font-size: 50px;
   box-shadow: black 0px 10px 20px;
   transition: 0.2s ease-in-out;
   cursor: pointer;
   &:hover {
     box-shadow: 0px 0px 15px 3px red;
-    border: 3px solid red;
+    border: 5px solid red;
     color: red;
   }
 }
