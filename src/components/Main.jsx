@@ -27,7 +27,7 @@ export default function Main() {
           A Better Way <br />
           to <span>Roll</span>
         </h1>
-        <Link to="/MultiRoll/roll">
+        <Link to="/roll">
           <button className="btn-home">Start</button>
         </Link>
       </motion.div>
@@ -38,7 +38,8 @@ export default function Main() {
           transition={{ duration: 1000, repeat: Infinity, ease: "linear" }}
           while={{ x: 0 }}
         >
-          MultiRoll<span>MultiRoll</span>MultiRoll<span>MultiRoll</span>MultiRoll
+          MultiRoll<span>MultiRoll</span>MultiRoll<span>MultiRoll</span>
+          MultiRoll
           <span>MultiRoll</span>MultiRoll<span>MultiRoll</span>MultiRoll
           <span>MultiRoll</span>MultiRoll<span>MultiRoll</span>MultiRoll
           <span>MultiR</span>

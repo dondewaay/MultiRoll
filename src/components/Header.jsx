@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <nav>
-      <Link className="link" to="/MultiRoll/" style={linkStyle}>
+      <Link className="link" to="/" style={linkStyle}>
         <motion.h1
           className="menu"
           initial={{ y: -50 }}
