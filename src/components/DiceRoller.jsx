@@ -165,13 +165,7 @@ const DiceRoller = () => {
           <NewCharacter set={handleRenderNewChar} addCharacter={addCharacter} />
         )}
         <AnimatePresence>
-          <motion.div
-            className="hide"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-          >
+          <div className="hide">
             <ScrollingText
               content={
                 selectedCharacter && selectedCharacter.className
@@ -184,7 +178,7 @@ const DiceRoller = () => {
                   : "#374be4"
               }
             />
-          </motion.div>
+          </div>
         </AnimatePresence>
         {isNewCardClicked && (
           <NewPreset

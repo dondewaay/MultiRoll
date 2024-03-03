@@ -300,6 +300,7 @@
   display: flex;
   flex-direction: row;
   margin-top: 40px;
+  align-items: center;
   justify-content: space-between;
   width: 600px;
 }
@@ -396,5 +397,12 @@
     .grid {
       grid-template-columns: repeat(auto-fit, minmax(60vw, 1fr));
     }
+  }
+  .big-text {
+    font-size: 70px;
+  }
+  .select-contain {
+    flex-direction: column;
+    width: 100%;
   }
 }

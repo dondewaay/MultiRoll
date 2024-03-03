@@ -7,32 +7,36 @@ const ScrollingText = ({ content, colorSel }) => {
   };
 
   return (
-    <div style={divStyle}>
-      <AnimatePresence>
-        <motion.div
-          className="scroll-text"
-          animate={{ x: -100000 }}
-          transition={{ duration: 800, ease: "linear", repeat: Infinity }}
-          while={{ x: 0 }}
-        >
-          {content}
-          <span>{content} </span>
-          {content}
-          <span>{content} </span>
-          {content}
-          <span>{content} </span>
-          {content}
-          <span>{content} </span>
-          {content}
-          <span>{content} </span>
-          {content}
-          <span>{content} </span>
-          {content}
-          <span>{content} </span>
-          {content}
-        </motion.div>
-      </AnimatePresence>
-    </div>
+    <AnimatePresence>
+      <motion.div
+        className="scroll-text"
+        initial={{ opacity: 0 }}
+        animate={{ x: -100000, opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{
+          x: { duration: 800, ease: "linear", repeat: Infinity },
+          opacity: { duration: 1 },
+        }}
+        while={{ x: 0 }}
+        style={divStyle}
+      >
+        {content}
+        <span>{content} </span>
+        {content}
+        <span>{content} </span>
+        {content}
+        <span>{content} </span>
+        {content}
+        <span>{content} </span>
+        {content}
+        <span>{content} </span>
+        {content}
+        <span>{content} </span>
+        {content}
+        <span>{content} </span>
+        {content}
+      </motion.div>
+    </AnimatePresence>
   );
 };
 

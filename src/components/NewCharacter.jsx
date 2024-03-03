@@ -82,9 +82,12 @@ const NewCharacter = ({ set, addCharacter }) => {
             onChange={(e) => setColor(e.target.value)}
             className="dropdown"
           >
-            <option value="#374be4">Blue</option>
             <option value="#e43737">Red</option>
             <option value="#cde437">Yellow</option>
+            <option value="#37e488">Green</option>
+            <option value="#374be4">Blue</option>
+            <option value="#6e37e4">Purple</option>
+            <option value="#e43799">Pink</option>
           </select>
         </div>
         <button className="btn" onClick={handleAddCharacter}>
