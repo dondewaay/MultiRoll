@@ -128,7 +128,7 @@ const DiceRoller = () => {
         )}
         <div className="select-contain">
           <button className="char-btn" onClick={handleRenderNewChar}>
-            New
+            +
           </button>
           {characters && characters.length > 0 && (
             <select

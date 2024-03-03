@@ -38,7 +38,7 @@ const NewPreset = ({
             />
             <div className="row">
               <div className="entry">
-                <label htmlFor="d2">d2: </label>
+                <h3 htmlFor="d2">d2: </h3>
                 <input
                   type="number"
                   min="0"
@@ -49,7 +49,7 @@ const NewPreset = ({
                 />
               </div>
               <div className="entry">
-                <label htmlFor="d3">d3: </label>
+                <h3 htmlFor="d3">d3: </h3>
                 <input
                   type="number"
                   min="0"
@@ -62,7 +62,7 @@ const NewPreset = ({
             </div>
             <div className="row">
               <div className="entry">
-                <label htmlFor="d4">d4: </label>
+                <h3 htmlFor="d4">d4: </h3>
                 <input
                   type="number"
                   min="0"
@@ -73,7 +73,7 @@ const NewPreset = ({
                 />
               </div>
               <div className="entry">
-                <label htmlFor="d6">d6: </label>
+                <h3 htmlFor="d6">d6: </h3>
                 <input
                   type="number"
                   min="0"
@@ -86,7 +86,7 @@ const NewPreset = ({
             </div>
             <div className="row">
               <div className="entry">
-                <label htmlFor="d8">d8: </label>
+                <h3 htmlFor="d8">d8: </h3>
                 <input
                   type="number"
                   min="0"
@@ -97,7 +97,7 @@ const NewPreset = ({
                 />
               </div>
               <div className="entry">
-                <label htmlFor="d10">d10: </label>
+                <h3 htmlFor="d10">d10: </h3>
                 <input
                   type="number"
                   min="0"
@@ -110,7 +110,7 @@ const NewPreset = ({
             </div>
             <div className="row">
               <div className="entry">
-                <label htmlFor="d12">d12: </label>
+                <h3 htmlFor="d12">d12: </h3>
                 <input
                   type="number"
                   min="0"
@@ -121,7 +121,7 @@ const NewPreset = ({
                 />
               </div>
               <div className="entry">
-                <label htmlFor="d20">d20: </label>
+                <h3 htmlFor="d20">d20: </h3>
                 <input
                   type="number"
                   min="0"
@@ -134,7 +134,7 @@ const NewPreset = ({
             </div>
             <div className="row">
               <div className="entry">
-                <label htmlFor="d100">d100: </label>
+                <h3 htmlFor="d100">d100: </h3>
                 <input
                   type="number"
                   min="0"
@@ -145,7 +145,7 @@ const NewPreset = ({
                 />
               </div>
               <div className="entry">
-                <label htmlFor="mod">Modifier: </label>
+                <h3 htmlFor="mod">Mod: </h3>
                 <input
                   type="number"
                   min="0"

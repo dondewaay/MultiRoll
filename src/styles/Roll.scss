@@ -30,17 +30,15 @@
       padding: 4px;
       font-family: "Neue";
       border: 2px solid white;
-      font-size: 40px;
+      font-size: 80px;
       color: white;
       height: 90px;
-      width: 120px;
+      width: 90px;
       border-radius: 1px;
       background: black;
       transition: 0.2s ease-in-out;
-      width: auto;
       padding: 20px;
       box-shadow: black 0px 10px 20px;
-      padding-top: 25px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -108,8 +106,20 @@
       box-shadow: black 0px 10px 20px;
       transition: 0.5 ease-in-out;
       z-index: 999;
+      .name {
+        padding-top: 5px;
+        font-family: "Neue";
+        width: 200px;
+        height: 45px;
+        font-size: 26px;
+        color: white;
+        background-color: black;
+        border: 1px solid white;
+        border-radius: 3px;
+        margin-bottom: 40px;
+      }
       h1 {
-        font-size: 40px;
+        font-size: 52px;
         position: absolute;
         top: 0;
         left: 0;
@@ -130,8 +140,15 @@
           padding-top: 5px;
           font-size: 20px;
           margin: 1rem;
-          label {
-            padding-top: 5px;
+          width: 200px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          h3 {
+            margin-top: 5px;
+            width: 80px;
+            font-size: 24px;
           }
           input {
             padding-top: 5px;
@@ -145,19 +162,6 @@
             width: 75px;
             height: 40px;
           }
-        }
-        .name {
-          padding-top: 5px;
-          font-family: "Neue";
-          width: 200px;
-          height: 45px;
-          font-size: 26px;
-          color: white;
-          background-color: black;
-          border: 1px solid white;
-          border-radius: 3px;
-          position: absolute;
-          left: 20px;
         }
       }
       .btn {
@@ -269,7 +273,7 @@
   transition: 0.2s ease-in-out;
   &:hover {
     box-shadow: 0px 0px 15px 3px red;
-    border: 3px solid red;
+    border: 4px solid red;
     color: red;
   }
 }
@@ -297,7 +301,7 @@
   flex-direction: row;
   margin-top: 40px;
   justify-content: space-between;
-  width: 650px;
+  width: 600px;
 }
 
 .blur {
