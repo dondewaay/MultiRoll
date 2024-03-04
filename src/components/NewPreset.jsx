@@ -148,7 +148,6 @@ const NewPreset = ({
                 <h3 htmlFor="mod">Mod: </h3>
                 <input
                   type="number"
-                  min="0"
                   id="mod"
                   name="mod"
                   value={config.mod}
