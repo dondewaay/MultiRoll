@@ -9,6 +9,7 @@ const ScrollingText = ({ content, colorSel }) => {
   return (
     <AnimatePresence>
       <motion.div
+        key="scroll"
         className="scroll-text"
         initial={{ opacity: 0 }}
         animate={{ x: -100000, opacity: 1 }}
@@ -21,19 +22,19 @@ const ScrollingText = ({ content, colorSel }) => {
         style={divStyle}
       >
         {content}
-        <span>{content} </span>
+        <span>{content}</span>
         {content}
-        <span>{content} </span>
+        <span>{content}</span>
         {content}
-        <span>{content} </span>
+        <span>{content}</span>
         {content}
-        <span>{content} </span>
+        <span>{content}</span>
         {content}
-        <span>{content} </span>
+        <span>{content}</span>
         {content}
-        <span>{content} </span>
+        <span>{content}</span>
         {content}
-        <span>{content} </span>
+        <span>{content}</span>
         {content}
       </motion.div>
     </AnimatePresence>
