@@ -2,7 +2,9 @@ export default function Footer() {
   return (
     <footer className="foot">
       <p>
-        <a href="">🦋 Don DeWaay III 2024</a>
+        <a href="https://dondewaay.github.io/Portfolio/">
+          🦋 Don DeWaay III 2024
+        </a>
       </p>
       <div>
         <p>Socials:</p>

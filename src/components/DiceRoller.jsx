@@ -192,7 +192,7 @@ const DiceRoller = () => {
         )}
       </div>
       {selectedCharacter ? (
-        <div className="grid">
+        <motion.div layout className="grid">
           {presets
             .filter((preset) => preset.char === selectedCharacter.id)
             .map((preset) => (
@@ -217,7 +217,7 @@ const DiceRoller = () => {
               +
             </motion.div>
           </AnimatePresence>
-        </div>
+        </motion.div>
       ) : (
         <div className="extra-div" />
       )}
