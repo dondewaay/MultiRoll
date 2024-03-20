@@ -7,3 +7,4 @@ TODO: Display dice roll individually
 Modifier for each die
 Health tracker
 individual dice
+On mobile, position add and delete next to each other below the selected char
