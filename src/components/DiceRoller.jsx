@@ -53,6 +53,7 @@ const DiceRoller = () => {
     const newId = lastUsedId + 1;
     newCharacter.id = newId;
     setCharacters([...characters, newCharacter]);
+    setSelectedCharacter(newCharacter);
     setLastUsedId(newId);
     handleRenderNewChar();
   };
