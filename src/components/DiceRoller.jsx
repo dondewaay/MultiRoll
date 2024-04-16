@@ -165,9 +165,10 @@ const DiceRoller = () => {
         {renderNewChar && (
           <NewCharacter set={handleRenderNewChar} addCharacter={addCharacter} />
         )}
-        <AnimatePresence>
-          <div className="hide">
+        <div className="hide">
+          <AnimatePresence mode="wait">
             <ScrollingText
+              key={999}
               content={
                 selectedCharacter && selectedCharacter.className
                   ? selectedCharacter.className.replace(/\s+/g, "")
@@ -179,8 +180,8 @@ const DiceRoller = () => {
                   : "#374be4"
               }
             />
-          </div>
-        </AnimatePresence>
+          </AnimatePresence>
+        </div>
         {isNewCardClicked && (
           <NewPreset
             render={handleNewCardClick}
@@ -193,8 +194,7 @@ const DiceRoller = () => {
         )}
       </div>
       {selectedCharacter ? (
-        <motion.div layout className="grid">
-          layout
+        <motion.div className="grid" layout>
           {presets
             .filter((preset) => preset.char === selectedCharacter.id)
             .map((preset) => (
@@ -207,14 +207,16 @@ const DiceRoller = () => {
                 handleConfig={handlePresetConfigChange}
                 newPreset={addPreset}
                 isClicked={isNewCardClicked}
+                layout
               />
             ))}
-          <AnimatePresence>
+          <AnimatePresence mode="wait">
             <motion.div
               initial={{ background: "rgba(255, 255, 255, 0.29)" }}
               whileHover={{ background: "rgba(255, 255, 255, 0.5)" }}
               className="add-new"
               onClick={handleNewCardClick}
+              layout
             >
               +
             </motion.div>
